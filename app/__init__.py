@@ -50,7 +50,11 @@ def create_app():
     # Import and register blueprints (routes)
     from app.routes.auth import auth_bp
     # from app.routes.user import user_bp
-    cors = CORS(auth_bp, origins=["http://localhost:5173"], supports_credentials=True )
+    CORS(app,
+     resources={r"/*": {"origins": ["http://localhost:5173", "http://127.0.0.1:5173", "https://mfa-admin.kwephilippines.ph"]}},
+     supports_credentials=True,
+     allow_headers=["Content-Type", "Authorization"],
+     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
     app.register_blueprint(auth_bp, url_prefix="/auth")
     # app.register_blueprint(user_bp, url_prefix="/user")
 

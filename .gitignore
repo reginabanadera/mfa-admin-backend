@@ -5,9 +5,6 @@ __pycache__/
 
 # Virtual environments
 env/
-venv/
-itoss_env/
-ENV/
 
 # Environment variables
 .env
