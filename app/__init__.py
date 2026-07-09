@@ -3,11 +3,9 @@ from flask import Flask
 from flask_cors import CORS
 from dotenv import load_dotenv
 from database import db
-import logging
 from flask_sqlalchemy import SQLAlchemy
 from app.services.encryption_services import generate_and_store_master_key
 
-logging.basicConfig(filename='C:/inetpub/wwwroot/IT_MFAAuthentication/error.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
 
 def create_app():
     app = Flask(__name__)
